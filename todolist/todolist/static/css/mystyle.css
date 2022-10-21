@@ -1,0 +1,9 @@
+/* class='bg-dark' style="color: white" */
+body {
+    color: white;
+}
+
+.accordion{
+    --bs-accordion-border-color: bg-dark;
+    --bs-accordion-bg: bg-dark;
+}

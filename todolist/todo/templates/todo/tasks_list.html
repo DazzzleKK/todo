@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block middle_right %}
+
+
+{% for task in tasks %}
+    <div class="accordion accordion-flush" id="accordion{{ task.id }}">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ task.id }}">
+                <button class="accordion-button bg-info collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ task.id }}"
+                    aria-expanded="false" aria-controls="collapse">
+                    {{ task.title }}
+                </button>
+            </h2>
+            <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
+                data-bs-parent="#accordion{{ task.id }}">
+                <div class="accordion-body bg-secondary">
+                    {{ task.content }}
+                    <a href="delete/{{ task.id }}">delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+
+    
+
+{% endblock middle_right %}

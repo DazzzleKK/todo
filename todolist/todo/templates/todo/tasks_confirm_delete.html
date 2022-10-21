@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block middle_right %}
+    <p><H1>ARE YOU SURE</H1><img src="{% static 'johncena.png' %}" width=150 alt="" style='margin-left: 33px'><h1 style='margin-left: 15px'>ABOUT THAT</h1></p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class='btn btn-secondary btn-block'>yes mr cena</button>
+        {% comment %} <button type="" class='btn btn-primary btn-block' value="Go back!" onclick="history.back()">no pls no</button> {% endcomment %}
+        <input type="button" value="no pls no" class='btn btn-secondary btn-block' onclick="location.href='{% url 'todolist' %}'">
+    </form>
+
+
+{% endblock middle_right %}
+    
