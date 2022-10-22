@@ -11,21 +11,18 @@
                 <button class="accordion-button bg-info collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ task.id }}"
                     aria-expanded="false" aria-controls="collapse">
                     
-                    {% if task.priority == 'CRITICAL' %}
-                        <span class="badge text-bg-danger"><i>{{ task.priority }}</i></span>
+                    {% if task.priority == '1' %}
+                        <span class="badge text-bg-danger"><i>CRITICAL</i></span>
                     {% endif %}                    
-                    {% if task.priority == 'HIGH' %}
-                        <span class="badge text-bg-primary"><i>{{ task.priority }}</i></span>
+                    {% if task.priority == '2' %}
+                        <span class="badge text-bg-warning"><i>HIGH</i></span>
                     {% endif %}                    
-                    {% if task.priority == 'MEDIUM' %}
-                        <span class="badge text-bg-primary"><i>{{ task.priority }}</i></span>
+                    {% if task.priority == '3' %}
+                        <span class="badge text-bg-primary"><i>MEDIUM</i></span>
                     {% endif %}                    
-                    {% if task.priority == 'LOW' %}
-                        <span class="badge text-bg-primary"><i>{{ task.priority }}</i></span>
+                    {% if task.priority == '4' %}
+                        <span class="badge text-bg-success"><i>LOW</i></span>
                     {% endif %}                    
-                    {% if task.priority == 'TRIVIAL' %}
-                        <span class="badge text-bg-primary"><i>{{ task.priority }}</i></span>
-                    {% endif %}
 
                          {{ task.title }}
                 </button>

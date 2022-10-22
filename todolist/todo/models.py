@@ -9,11 +9,10 @@ from django.db import models
 class Tasks(models.Model):
 
     PRIORITIES = (
-        ('CRITICAL', 'Critical Priority'),
-        ('HIGH', 'High Priority'),
-        ('MEDIUM', 'Medium Priority'),
-        ('LOW', 'Low Priority'),
-        ('TRIVIAL', 'High Priority'),
+        ('1', 'Critical Priority'),
+        ('2', 'High Priority'),
+        ('3', 'Medium Priority'),
+        ('4', 'Low Priority'),
     )
 
     title = models.CharField(max_length=150)
