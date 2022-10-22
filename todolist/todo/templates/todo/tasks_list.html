@@ -10,7 +10,7 @@
             <h2 class="accordion-header" id="heading{{ task.id }}">
                 <button class="accordion-button bg-info collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ task.id }}"
                     aria-expanded="false" aria-controls="collapse">
-                    
+                    <div>
                     {% if task.priority == '1' %}
                         <span class="badge text-bg-danger"><i>CRITICAL</i></span>
                     {% endif %}                    
@@ -23,7 +23,7 @@
                     {% if task.priority == '4' %}
                         <span class="badge text-bg-success"><i>LOW</i></span>
                     {% endif %}                    
-
+                    </div>        
                          {{ task.title }}
                 </button>
             </h2>
