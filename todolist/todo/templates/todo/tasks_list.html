@@ -29,8 +29,11 @@
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
             data-bs-parent="#accordion{{ task.id }}">
             <div class="accordion-body bg-secondary">
-                {{ task.content }} <a class="btn btn-primary" href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
-                <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                {{ task.content }}
+                <div class="text-end">
+                    <a class="btn btn-primary " href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
+                    <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                </div>
             </div>
         </div>
     </div>

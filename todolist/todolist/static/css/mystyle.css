@@ -10,7 +10,7 @@ body {
 
 .bg-secondary{
     color: black;
-    --bs-secondary-rgb: 255, 250, 240;
+    --bs-secondary-rgb: 255, 250, 220;
 }
 
 .bg-info{

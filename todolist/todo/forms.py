@@ -7,9 +7,9 @@ class NewTaskForm(forms.ModelForm):
         model = Tasks
         fields = ['title', 'content', 'priority']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control-sm bg-secondary'}),
-            'priority': forms.Select(attrs={'class': 'form-control-sm bg-secondary'}),
-            'content': forms.TextInput(attrs={'class': 'form-control-lg bg-secondary', 'rows': 5}),
+            'title': forms.TextInput(attrs={'class': 'form-control bg-secondary'}),
+            'priority': forms.Select(attrs={'class': 'form-control bg-secondary'}),
+            'content': forms.Textarea(attrs={'class': 'form-control bg-secondary', 'rows': 5}),
         }
 
 class EditTaskForm(forms.ModelForm):
@@ -17,7 +17,8 @@ class EditTaskForm(forms.ModelForm):
         model = Tasks
         fields = ['title', 'content', 'priority', 'completed']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control-sm bg-secondary'}),
-            'priority': forms.Select(attrs={'class': 'form-control-sm bg-secondary'}),
+            'title': forms.TextInput(attrs={'class': 'form-control bg-secondary'}),
+            'priority': forms.Select(attrs={'class': 'form-control bg-secondary'}),
             'content': forms.Textarea(attrs={'class': 'form-control bg-secondary', 'rows': 5}),
+            'completed': forms.CheckboxInput(attrs={'class': 'form-check-input bg-primary'}),
         }

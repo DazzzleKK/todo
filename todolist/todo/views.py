@@ -20,7 +20,7 @@ class ToDoList(ListView):
 class TaskEditView(UpdateView):
     model = Tasks
     form_class = EditTaskForm
-    template_name = "todo/complete_task.html"
+    template_name = "todo/edit_task.html"
     success_url = reverse_lazy('todolist')
 
 
