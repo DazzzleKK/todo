@@ -31,7 +31,7 @@
             data-bs-parent="#accordion{{ task.id }}">
             <div class="accordion-body bg-secondary">
                 {{ task.content }}
-                <a href="delete/{{ task.id }}">delete</a>
+                <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
             </div>
         </div>
     </div>

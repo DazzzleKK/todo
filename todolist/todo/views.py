@@ -1,6 +1,6 @@
-from django.views.generic import ListView, CreateView, DeleteView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from .forms import NewTaskForm
+from .forms import NewTaskForm, EditTaskForm
 from .models import Tasks
 
 # Create your views here.
@@ -17,6 +17,13 @@ class ToDoList(ListView):
         return Tasks.objects.filter(completed=False).order_by('priority')
 
 
+class TaskEditView(UpdateView):
+    model = Tasks
+    form_class = EditTaskForm
+    template_name = "todo/complete_task.html"
+    success_url = reverse_lazy('todolist')
+
+
 class ToDoListCompleted(ListView):
     model = Tasks
     template_name = 'todo/completed_tasks_list.html'
@@ -25,7 +32,7 @@ class ToDoListCompleted(ListView):
     # paginate_by = 10
 
     def get_queryset(self):
-        return Tasks.objects.filter(completed=True).order_by('priority')        
+        return Tasks.objects.filter(completed=True).order_by('priority')
 
 
 class TaskCreateView(CreateView):
@@ -34,6 +41,6 @@ class TaskCreateView(CreateView):
     success_url = reverse_lazy('todolist')
 
 
-class TaskDelete(DeleteView):
+class TaskDeleteView(DeleteView):
     model = Tasks
     success_url = reverse_lazy('todolist')
