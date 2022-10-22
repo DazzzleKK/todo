@@ -10,6 +10,7 @@ class ToDoList(ListView):
     model = Tasks
     template_name = 'todo/tasks_list.html'
     context_object_name = 'tasks'
+    ordering = ['priority']
     # paginate_by = 10
 
 
