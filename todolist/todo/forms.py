@@ -7,9 +7,9 @@ class NewTaskForm(forms.ModelForm):
         model = Tasks
         fields = ['title', 'content', 'priority']
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control bg-secondary'}),
+            'title': forms.TextInput(attrs={'class': 'form-control bg-secondary', 'placeholder': 'New Task'}),
             'priority': forms.Select(attrs={'class': 'form-control bg-secondary'}),
-            'content': forms.Textarea(attrs={'class': 'form-control bg-secondary', 'rows': 5}),
+            'content': forms.Textarea(attrs={'class': 'form-control bg-secondary', 'rows': 3}),
         }
 
 class EditTaskForm(forms.ModelForm):
