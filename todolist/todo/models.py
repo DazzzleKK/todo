@@ -1,4 +1,3 @@
-from re import T
 from django.db import models
 
 # Create your models here.
@@ -19,7 +18,8 @@ class Tasks(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
-    completed = models.BooleanField(null=True)
+    completed = models.BooleanField(null=True, default=False)
+    # completed_at = models.DateTimeField(auto_now=True, auto_now_add=False)
     priority = models.CharField(max_length=50, choices=PRIORITIES)
 
     def __str__(self):

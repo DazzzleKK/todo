@@ -3,7 +3,7 @@
 
 {% block middle_right %}
 
-<p>Current Tasks</p>
+<p>Completed Tasks</p>
 {% for task in tasks %}
 <div class="accordion accordion-flush" id="accordion{{ task.id }}">
     <div class="accordion-item">
@@ -30,7 +30,7 @@
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
             data-bs-parent="#accordion{{ task.id }}">
             <div class="accordion-body bg-secondary">
-                {{ task.content }} <button class='btn btn-primary'>Complete</button>
+                {{ task.content }}
                 <a href="delete/{{ task.id }}">delete</a>
             </div>
         </div>

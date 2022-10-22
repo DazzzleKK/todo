@@ -23,12 +23,13 @@
                 upper-row
             </div>
         </div>
-        <div class="row h-50 align-items-center">
+        <div class="row h-50">
             <div class="col-md-4">
 
                 {% block middle_left %}
                 <p><a href="{% url 'createtask' %}">add_task</a></p>
                 <p><a href="{% url 'todolist' %}">todolist</a></p>
+                <p><a href="{% url 'completed' %}">completed</a></p>
                 {% endblock middle_left %}
 
             </div>
