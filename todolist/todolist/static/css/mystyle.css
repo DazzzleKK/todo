@@ -1,9 +1,22 @@
 /* class='bg-dark' style="color: white" */
 body {
-    color: white;
+    color: black;
 }
 
 .accordion{
     --bs-accordion-border-color: bg-dark;
     --bs-accordion-bg: bg-dark;
+}
+
+.bg-secondary{
+    color: black;
+    --bs-secondary-rgb: 255, 250, 240;
+}
+
+.bg-info{
+    --bs-info-rgb: 255, 250, 240;
+}
+
+.bg-dark{
+    --bs-dark-rgb: 176, 196, 222;
 }
