@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+{% load tasks_tags %}
 
 <head>
   <meta charset="UTF-8">
@@ -41,14 +42,14 @@
               <div class="fw-bold"><a href="{% url 'todolist' %}">To Do</a></div>
               See current tasks list
             </div>
-            <span class="badge bg-primary rounded-pill">14</span>
+            <span class="badge bg-primary rounded-pill">{% tasks_count %}</span>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
               <div class="fw-bold"><a href="{% url 'completed' %}">Completed Tasks</a></div>
               Check out what you've done so far!
             </div>
-            <span class="badge bg-primary rounded-pill">14</span>
+            <span class="badge bg-primary rounded-pill">{% completed_tasks_count %}</span>
           </li>
         </ol>
         {% endblock middle_left %}
