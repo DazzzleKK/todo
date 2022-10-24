@@ -1,18 +1,57 @@
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, View
 from django.urls import reverse_lazy
 from .forms import NewTaskForm, EditTaskForm
 from .models import Tasks
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import LoginView, LogoutView
 
 # Create your views here.
 
 
-def register(request):
-    return render(request, 'todo/register.html')
+# def register(request):
+#     form = UserCreationForm()
+#     return render(request, 'todo/register.html', {'form': form})
+
+class SignUpView(CreateView):
+    template_name = 'todo/auth/register.html'
+    success_url = reverse_lazy('login')
+    form_class = UserCreationForm
 
 
-def login(request):
-    return render(request, 'todo/login.html')
+class MyLoginView(LoginView):
+    template_name = 'todo/auth/login.html'
+    success_url = reverse_lazy('todolist')
+
+
+class MyLogoutView(LogoutView):
+    template_name = 'todo/auth/login.html'
+    # next_page = 'login'
+    
+
+
+# class LoginView(View):
+#     template_name = 'todo/login.html'
+#     form_class = AuthenticationForm
+
+#     def get(self, request):
+#         form = self.form_class()
+#         message = ''
+#         return render(request, self.template_name, context={'form': form, 'message': message})
+
+#     def post(self, request):
+#         form = self.form_class(request.POST)
+#         if form.is_valid():
+#             user = authenticate(
+#                 username=form.cleaned_data['username'],
+#                 password=form.cleaned_data['password'],
+#             )
+#             if user is not None:
+#                 login(request, user)
+#                 return redirect('home')
+#         message = 'Login failed!'
+#         return render(request, self.template_name, context={'form': form, 'message': message})
 
 
 class ToDoList(ListView):

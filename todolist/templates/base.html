@@ -20,15 +20,16 @@
   <div class="container">
     <div class="row h-25 align-items-center">
       <div class="col-md-12">
-        <h1 class="display-1">Upper row</h1>
+        <h1 class="display-1">Upper row {{ user.username }}</h1>
       </div>
     </div>
     <div class="row h-50">
       <div class="col-md-4">
+
+        {% block middle_left %}
         <div class="row h-auto align-items-center">
           <h1 class="display-6">Menu</h1>
         </div>
-        {% block middle_left %}
         <ol class="list-group">
           <li class="list-group-item d-flex justify-content-between align-items-start bg-info">
             <div class="ms-2 me-auto">
@@ -61,6 +62,12 @@
             <div class="ms-2 me-auto">
               <div class="fw-bold"><a href="{% url 'login' %}">Login</a></div>
               login
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start bg-info">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><a href="{% url 'logout' %}">Logout</a></div>
+              logout
             </div>
           </li>
         </ol>

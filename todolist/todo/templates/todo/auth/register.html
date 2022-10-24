@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block middle_left %}
+
+{% endblock middle_left %}
+
+
+{% block content_title %}
+<div class="row h-auto align-items-center">
+    <h1 class="display-6">Sign-up</h1>
+</div>
+{% endblock content_title %}
+
+
+{% block middle_right %}
+<form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class='btn btn-primary'>Sign-up</button>
+</form>
+{% endblock middle_right %}
+
+</div>
