@@ -31,9 +31,12 @@
             <div class="accordion-body bg-secondary">
                 {{ task.content }}
                 <div class="text-end">
-                    <a class="btn btn-primary " href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
-                    <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                    <div class="btn-group btn-group-lg" role="group">
+                        <a class="btn btn-outline-primary" href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
+                        <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
