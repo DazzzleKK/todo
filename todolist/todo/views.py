@@ -1,6 +1,6 @@
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, View
 from django.urls import reverse_lazy
-from .forms import NewTaskForm, EditTaskForm
+from .forms import NewTaskForm, EditTaskForm, MyUserCreationForm
 from .models import Tasks
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -17,7 +17,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 class SignUpView(CreateView):
     template_name = 'todo/auth/register.html'
     success_url = reverse_lazy('login')
-    form_class = UserCreationForm
+    form_class = MyUserCreationForm
 
 
 class MyLoginView(LoginView):

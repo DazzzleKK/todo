@@ -13,6 +13,11 @@ body {
     --bs-secondary-rgb: 255, 250, 220;
 }
 
+.text-bg-secondary {
+    color: black!important;
+    background-color: RGBA(255, 250, 220, var(--bs-bg-opacity, 1)) !important;
+}
+
 .bg-info {
     --bs-info-rgb: 255, 250, 240;
 }
