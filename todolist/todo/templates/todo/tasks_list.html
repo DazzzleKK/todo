@@ -14,13 +14,13 @@
                     <span class="badge text-bg-danger"><i>CRITICAL</i></span>
                     {% endif %}
                     {% if task.priority == '2' %}
-                    <span class="badge text-bg-warning"><i>HIGH</i></span>
+                    <span class="badge text-bg-warning"><i>MAJOR</i></span>
                     {% endif %}
                     {% if task.priority == '3' %}
-                    <span class="badge text-bg-primary"><i>MEDIUM</i></span>
+                    <span class="badge text-bg-primary"><i>MINOR</i></span>
                     {% endif %}
                     {% if task.priority == '4' %}
-                    <span class="badge text-bg-success"><i>LOW</i></span>
+                    <span class="badge text-bg-success"><i>TRIVIAL</i></span>
                     {% endif %}
                 </div>
                 {{ task.title }}

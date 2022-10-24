@@ -28,15 +28,16 @@
             {{ form.priority }}
         </div>
     </div>
-    <div class='display-6 text-end' >
-        {{ form.completed.label }}:{{ form.completed }}    
+    <div class='display-6 text-end'>
+        {{ form.completed.label }}:
+        <input type="checkbox" name="completed" class="btn-check" id="id_completed">    
+        <label class="btn btn-outline-primary" for="id_completed"><b>✓</b></label>
+
     </div>
     <br>
     <div class="d-grid gap-2">
         <button type="submit" class='btn btn-primary'>Save</button>
     </div>
-
-
 
 </form>
 {% endblock middle_right %}
