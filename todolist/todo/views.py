@@ -2,8 +2,17 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .forms import NewTaskForm, EditTaskForm
 from .models import Tasks
+from django.shortcuts import render
 
 # Create your views here.
+
+
+def register(request):
+    return render(request, 'todo/register.html')
+
+
+def login(request):
+    return render(request, 'todo/login.html')
 
 
 class ToDoList(ListView):

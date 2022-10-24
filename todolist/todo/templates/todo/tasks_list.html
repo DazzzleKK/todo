@@ -3,14 +3,14 @@
 
 {% block content_title %}
 <div class="col-md-8">
-  <h1 class="display-6">Current Tasks</h1>
-</div>  
+    <h1 class="display-6">Current Tasks</h1>
+</div>
 {% endblock content_title %}
 
 {% block middle_right %}
 
+<div class="accordion" id="accordion{{ task.id }}">
 {% for task in tasks %}
-<div class="accordion accordion-flush" id="accordion{{ task.id }}">
     <div class="accordion-item">
         <h2 class="accordion-header" id="heading{{ task.id }}">
             <button class="accordion-button bg-info collapsed" type="button" data-bs-toggle="collapse"
@@ -29,7 +29,7 @@
                     <span class="badge text-bg-success"><i>TRIVIAL</i></span>
                     {% endif %}
                 </div>
-                <b>  {{ task.title|title }}</b>          
+                <b>  {{ task.title|title }}</b>
             </button>
         </h2>
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
@@ -45,11 +45,8 @@
             </div>
         </div>
     </div>
-</div>
-
-
 {% endfor %}
-
+</div>
 
 
 {% endblock middle_right %}
