@@ -3,8 +3,8 @@
 
 {% block content_title %}
 <div class="col-md-8">
-    <h1 class="display-6">Current Tasks</h1>
-</div>
+  <h1 class="display-6">Current Tasks</h1>
+</div>  
 {% endblock content_title %}
 
 {% block middle_right %}
@@ -29,13 +29,13 @@
                     <span class="badge text-bg-success"><i>TRIVIAL</i></span>
                     {% endif %}
                 </div>
-                {{ task.title }}
+                <b>  {{ task.title|title }}</b>          
             </button>
         </h2>
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
             data-bs-parent="#accordion{{ task.id }}">
             <div class="accordion-body bg-secondary">
-                {{ task.content }}
+                {{ task.content|capfirst }}
                 <div class="text-end">
                     <div class="btn-group btn-group-lg" role="group">
                         <a class="btn btn-outline-primary" href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
