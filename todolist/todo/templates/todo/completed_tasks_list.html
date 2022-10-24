@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
+{% block content_title %}
+<div class="col-md-8">
+  <h1 class="display-6">Completed Tasks</h1>
+</div>  
+{% endblock content_title %}
+
 
 {% block middle_right %}
 
-<p>Completed Tasks</p>
 {% for task in tasks %}
 <div class="accordion accordion-flush" id="accordion{{ task.id }}">
     <div class="accordion-item">

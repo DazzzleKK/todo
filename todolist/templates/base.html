@@ -22,6 +22,16 @@
         <h1 class="display-1">Upper row</h1>
       </div>
     </div>
+    <div class="row h-auto align-items-center">
+      <div class="col-md-4">
+        <h1 class="display-6">Menu</h1>
+      </div>   
+      {% block content_title %}
+      <div class="col-md-8">
+        <h1 class="display-6">Content</h1>
+      </div>  
+      {% endblock content_title %}
+    </div>
     <div class="row h-50">
       <div class="col-md-4">
 
