@@ -27,31 +27,6 @@ class MyLoginView(LoginView):
 
 class MyLogoutView(LogoutView):
     template_name = 'todo/auth/login.html'
-    # next_page = 'login'
-    
-
-
-# class LoginView(View):
-#     template_name = 'todo/login.html'
-#     form_class = AuthenticationForm
-
-#     def get(self, request):
-#         form = self.form_class()
-#         message = ''
-#         return render(request, self.template_name, context={'form': form, 'message': message})
-
-#     def post(self, request):
-#         form = self.form_class(request.POST)
-#         if form.is_valid():
-#             user = authenticate(
-#                 username=form.cleaned_data['username'],
-#                 password=form.cleaned_data['password'],
-#             )
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('home')
-#         message = 'Login failed!'
-#         return render(request, self.template_name, context={'form': form, 'message': message})
 
 
 class ToDoList(ListView):
@@ -87,6 +62,11 @@ class TaskCreateView(CreateView):
     form_class = NewTaskForm
     template_name = "todo/new_task.html"
     success_url = reverse_lazy('todolist')
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.author = self.request.user
+        return super(TaskCreateView, self).form_valid(form)
 
 
 class TaskDeleteView(DeleteView):
