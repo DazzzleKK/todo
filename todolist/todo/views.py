@@ -6,6 +6,8 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf import settings
+
 
 # Create your views here.
 
@@ -37,7 +39,7 @@ class ToDoList(ListView):
     # paginate_by = 10
 
     def get_queryset(self):
-        return Tasks.objects.filter(completed=False).order_by('priority')
+        return Tasks.objects.filter(author=self.request.user).filter(completed=False).order_by('priority')
 
 
 class TaskEditView(UpdateView):

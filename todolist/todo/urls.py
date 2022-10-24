@@ -9,7 +9,7 @@ urlpatterns = [
     path('delete/<int:pk>/', TaskDeleteView.as_view(), name='delete'),
     path('edit/<int:pk>/', TaskEditView.as_view(), name='edit'),
     path('register/', SignUpView.as_view(), name='register'),
-    path('login/', MyLoginView.as_view(), name='login'),
+    path('login/', MyLoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout/', MyLogoutView.as_view(), name='logout'),
     # path('logout/', RedirectView.as_view(pattern_name='login'), name='logout'),
 ]

@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-{% block middle_left %}
-
-{% endblock middle_left %}
 
 
 {% block content_title %}
@@ -16,7 +13,7 @@
 <form method='POST'>
     {% csrf_token %}
     {{ form }}
-    <button type="submit" class='btn btn-primary'>Sign-up</button>
+    <button type="submit" class='btn btn-primary'>Login</button>
 </form>
 
 {% endblock content %}
