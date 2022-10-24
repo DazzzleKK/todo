@@ -14,3 +14,7 @@ def tasks_count():
 def completed_tasks_count():
     completed_tasks_count = Tasks.objects.filter(completed__exact=True).count()    
     return completed_tasks_count
+
+# @register.simple_tag
+# def badge():
+#     pass
