@@ -2,7 +2,8 @@
 {% load static %}
 
 
-{% block middle_right %}
+{% block content %}
+{% if request.user.is_authenticated %}
 <div class='text-center'>
 <p>
     <H1>ARE YOU SURE</H1><img src="{% static 'img/johncena.png' %}" width=150 alt="">
@@ -17,5 +18,7 @@
         onclick="location.href='{% url 'todolist' %}'">
 </form>
 </div>
-
-{% endblock middle_right %}
+{% else %}
+<p>pls login</p>
+{% endif %}
+{% endblock content %}

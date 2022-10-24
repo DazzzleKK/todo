@@ -20,7 +20,13 @@
   <div class="container">
     <div class="row h-25 align-items-center">
       <div class="col-md-12">
-        <h1 class="display-1">Upper row {{ user.username }}</h1>
+        <h1 class="display-1">
+          {% if request.user.is_authenticated %}
+          Hello, {{ user.username }}
+          {% else %}
+          Pls login
+          {% endif %}
+        </h1>
       </div>
     </div>
     <div class="row h-50">
@@ -52,6 +58,9 @@
             </div>
             <span class="badge bg-primary rounded-pill">{% completed_tasks_count %}</span>
           </li>
+        </ol>
+        <br>
+        <ol class="list-group">
           <li class="list-group-item d-flex justify-content-between align-items-start bg-info">
             <div class="ms-2 me-auto">
               <div class="fw-bold"><a href="{% url 'register' %}">register</a></div>
@@ -80,9 +89,9 @@
           <h1 class="display-6">Content</h1>
         </div>
         {% endblock content_title %}
-        {% block middle_right %}
-        <p>middle-row-content</p>
-        {% endblock middle_right %}
+        {% block content %}
+        <p>pls login</p>
+        {% endblock content %}
       </div>
     </div>
     <div class="row h-25 align-items-center">

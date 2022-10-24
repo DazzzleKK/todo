@@ -7,9 +7,11 @@
 {% endblock content_title %}
 
 
-{% block middle_right %}
 
+{% block content %}
+{% if request.user.is_authenticated %}
 {% for task in tasks %}
+
 <div class="accordion accordion-flush" id="accordion{{ task.id }}">
     <div class="accordion-item">
         <h2 class="accordion-header" id="heading{{ task.id }}">
@@ -44,7 +46,7 @@
 
 
 {% endfor %}
-
-
-
-{% endblock middle_right %}
+{% else %}
+<p>pls login</p>
+{% endif %}
+{% endblock content %}

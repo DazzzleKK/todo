@@ -6,7 +6,8 @@
 </div>  
 {% endblock content_title %}
 
-{% block middle_right %}
+{% block content %}
+{% if request.user.is_authenticated %}
 {% comment %} <form action="" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
@@ -42,5 +43,7 @@
 </form>
 
 
-
-{% endblock middle_right %}
+{% else %}
+<p>pls login</p>
+{% endif %}
+{% endblock content %}

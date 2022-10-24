@@ -12,13 +12,13 @@
 {% endblock content_title %}
 
 
-{% block middle_right %}
+{% block content %}
 <form method='POST'>
     {% csrf_token %}
     {{ form }}
     <button type="submit" class='btn btn-primary'>Sign-up</button>
 </form>
 
-{% endblock middle_right %}
+{% endblock content %}
 
 </div>
