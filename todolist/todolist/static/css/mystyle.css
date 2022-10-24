@@ -3,20 +3,28 @@ body {
     color: black;
 }
 
-.accordion{
+.accordion {
     --bs-accordion-border-color: bg-dark;
     --bs-accordion-bg: bg-dark;
 }
 
-.bg-secondary{
+.bg-secondary {
     color: black;
     --bs-secondary-rgb: 255, 250, 220;
 }
 
-.bg-info{
+.bg-info {
     --bs-info-rgb: 255, 250, 240;
 }
 
-.bg-dark{
+.bg-dark {
     --bs-dark-rgb: 176, 196, 222;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
