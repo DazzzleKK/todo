@@ -38,7 +38,7 @@
                 {{ task.content|capfirst }}
                 <div class="text-end">
                     <div class="btn-group btn-group-lg" role="group">
-                        <a class="btn btn-outline-primary" href="/todo/edit/{{ task.pk }}" role="button">Edit</a>
+                        <a class="btn btn-outline-primary" href="/todo/edit/{{ task.author_id }}/{{ task.pk }}" role="button">Edit</a>
                         <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
                     </div>
                 </div>

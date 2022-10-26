@@ -3,11 +3,8 @@
 
 {% block content %}
 {% if request.user.is_authenticated %}
-{% comment %} <form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class='btn btn-primary btn-block'>Save</button>
-</form> {% endcomment %}
+
+{% if request.user.id == object.author_id %}
 
 <form action="" method="POST">
     {% csrf_token %}
@@ -31,7 +28,7 @@
     </div>
     <div class='display-6 text-end'>
         {{ form.completed.label }}:
-        <input type="checkbox" name="completed" class="btn-check" id="id_completed">    
+        <input type="checkbox" name="completed" class="btn-check" id="id_completed">
         <label class="btn btn-outline-primary" for="id_completed"><b>✓</b></label>
 
     </div>
@@ -41,6 +38,9 @@
     </div>
 
 </form>
+{% else %}
+bad
+{% endif %}
 {% else %}
 <p>pls login</p>
 {% endif %}

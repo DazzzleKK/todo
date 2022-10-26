@@ -39,7 +39,10 @@ class ToDoList(ListView):
     # paginate_by = 10
 
     def get_queryset(self):
-        return Tasks.objects.filter(author=self.request.user).filter(completed=False).order_by('priority')
+        if self.request.user.username:
+            return Tasks.objects.filter(author=self.request.user).filter(completed=False).order_by('priority')
+        else:
+            return None
 
 
 class TaskEditView(UpdateView):
@@ -54,10 +57,12 @@ class ToDoListCompleted(ListView):
     template_name = 'todo/completed_tasks_list.html'
     context_object_name = 'tasks'
     ordering = ['priority']
-    # paginate_by = 10
 
     def get_queryset(self):
-        return Tasks.objects.filter(completed=True).order_by('priority')
+        if self.request.user.username:
+            return Tasks.objects.filter(author=self.request.user).filter(completed=True).order_by('priority')
+        else:
+            return None
 
 
 class TaskCreateView(CreateView):
