@@ -2,8 +2,8 @@
 
 {% block content_title %}
 <div class="col-md-8">
-  <h1 class="display-6">New Task</h1>
-</div>  
+    <h1 class="display-6">New Task</h1>
+</div>
 {% endblock content_title %}
 
 {% block content %}
@@ -29,9 +29,18 @@
         </div>
     </div>
     <div class="row mb-3">
-        <label for="" class="col-sm-2 col-form-label">{{ form.priority.label }}</label>
-        <div class="col-sm-10">
-            {{ form.priority }}
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" name="priority" value="1" class="btn-check" required="" id="id_priority_0" checked>
+            <label class="btn btn-outline-danger" for="id_priority_0">Critical</label>
+
+            <input type="radio" name="priority" value="2" class="btn-check" required="" id="id_priority_1">
+            <label class="btn btn-outline-primary" for="id_priority_1">High</label>
+
+            <input type="radio" name="priority" value="3" class="btn-check" required="" id="id_priority_2">
+            <label class="btn btn-outline-primary" for="id_priority_2">Medium</label>
+
+            <input type="radio" name="priority" value="4" class="btn-check" required="" id="id_priority_3">
+            <label class="btn btn-outline-primary" for="id_priority_3">Low</label>
         </div>
     </div>
     <div class="d-grid gap-2">
@@ -39,7 +48,7 @@
     </div>
 
 
-    
+
 </form>
 
 
