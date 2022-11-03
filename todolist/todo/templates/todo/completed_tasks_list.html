@@ -22,23 +22,28 @@
                     <span class="badge text-bg-danger"><i>CRITICAL</i></span>
                     {% endif %}
                     {% if task.priority == '2' %}
-                    <span class="badge text-bg-warning"><i>HIGH</i></span>
+                    <span class="badge text-bg-warning"><i>MAJOR</i></span>
                     {% endif %}
                     {% if task.priority == '3' %}
-                    <span class="badge text-bg-primary"><i>MEDIUM</i></span>
+                    <span class="badge text-bg-primary"><i>MINOR</i></span>
                     {% endif %}
                     {% if task.priority == '4' %}
-                    <span class="badge text-bg-success"><i>LOW</i></span>
+                    <span class="badge text-bg-success"><i>TRIVIAL</i></span>
                     {% endif %}
                 </div>
-                {{ task.title }}
+                <b>  {{ task.title|title }}</b>
             </button>
         </h2>
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
             data-bs-parent="#accordion{{ task.id }}">
             <div class="accordion-body bg-secondary">
-                {{ task.content }}
-                <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                {{ task.content|capfirst }}
+                <div class="text-end">
+                    <div class="btn-group btn-group-lg" role="group">
+                        <a class="btn btn-outline-primary" href="/todo/edit/{{ task.author_id }}/{{ task.pk }}" role="button">Edit</a>
+                        <a class="btn btn-primary" href="{% url 'delete' task.pk %}" role="button">Delete</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
