@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content_title %}
 <div class="col-md-8">
@@ -14,7 +14,7 @@
     <div class="accordion-item">
         <h2 class="accordion-header" id="heading{{ task.id }}">
             <button class="accordion-button bg-info collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse{{ task.id }}" aria-expanded="false" aria-controls="collapse">
+                data-bs-target="#collapse{{ task.id }}" aria-expanded="false" aria-controls="collapse" id="{{ task.id }}">
                 <div>
                     {% if task.priority == '1' %}
                     <span class="badge text-bg-danger"><i>CRITICAL</i></span>
@@ -29,7 +29,7 @@
                     <span class="badge text-bg-success"><i>TRIVIAL</i></span>
                     {% endif %}
                 </div>
-                <b>  {{ task.title|title }}</b>
+                <b>  {{ task.title|title }} </b>
             </button>
         </h2>
         <div id="collapse{{ task.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ task.id }}"
@@ -51,4 +51,7 @@
 {% else %}
 <p>pls login</p>
 {% endif %}
+
+<script src="{% static 'js/buttons.js' %}"></script>
+
 {% endblock content %}

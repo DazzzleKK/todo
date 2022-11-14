@@ -10,7 +10,11 @@ body {
 
 .bg-secondary {
     color: black;
-    --bs-secondary-rgb: 255, 250, 220;
+    --bs-secondary-rgb: 82, 161, 183;
+}
+
+.bg-dropdown {
+    --bs-dropdown-bg: #8CC0CF;
 }
 
 .text-bg-secondary {
@@ -19,17 +23,29 @@ body {
 }
 
 .bg-info {
-    --bs-info-rgb: 255, 250, 240;
+    --bs-info-rgb: 66, 138, 158;
 }
 
 .bg-dark {
-    --bs-dark-rgb: 176, 196, 222;
+    --bs-dark-rgb: 34, 34, 59;
 }
+
 
 a {
     text-decoration: none;
+    color: #8F0500;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.username-dropdown{
+    display: flex;
+    align-content:left;
+    justify-content: end;
+}
+
+.display-6 {
+    color: #A8D0DB;
 }
